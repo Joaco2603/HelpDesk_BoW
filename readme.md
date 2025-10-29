@@ -23,17 +23,6 @@ Este proyecto es una aplicación de mesa de ayuda (Help Desk) diseñada para un 
 3. IntelliJ detectará automáticamente las clases Java en `src/`. Si necesitas, marca `src/` como fuente: clic derecho en la carpeta `src` -> `Mark Directory as` -> `Sources Root`.
 4. Ejecuta la clase `Main` desde el panel de la izquierda (clic derecho en `Main.java` -> `Run 'Main.main()'`).
 
-Salida esperada al ejecutar `Main` (salida de consola):
-
-```
-Hello and welcome!
-i = 1
-i = 2
-i = 3
-i = 4
-i = 5
-```
-
 ## Ejecutar desde la terminal (Windows PowerShell)
 
 1. Abre PowerShell.
