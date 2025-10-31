@@ -1,4 +1,7 @@
+package cr.ac.ucenfotec.bl.entities;
+
 public class Departamento {
+    private String id;
     private String nombre;
     private String descripcion;
     private String contacto;
@@ -6,10 +9,19 @@ public class Departamento {
     public Departamento() {
     }
 
-    public Departamento(String nombre, String descripcion, String contacto) {
+    public Departamento(String id, String nombre, String descripcion, String contacto) {
+        this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.contacto = contacto;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -39,7 +51,8 @@ public class Departamento {
     @Override
     public String toString() {
         return "Departamento{" +
-                "nombre='" + nombre + '\'' +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", contacto='" + contacto + '\'' +
                 '}';

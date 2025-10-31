@@ -1,4 +1,7 @@
+package cr.ac.ucenfotec.bl.entities;
+
 public class Usuario {
+    private String id;
     private String nombre;
     private String correo;
     private String password;
@@ -8,12 +11,21 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String nombre, String correo, String password, String telefono, String rol) {
+    public Usuario(String id, String nombre, String correo, String password, String telefono, String rol) {
+        this.id = id;
         this.nombre = nombre;
         this.correo = correo;
         this.password = password;
         this.telefono = telefono;
         this.rol = rol;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -59,14 +71,11 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario{" +
-                "nombre='" + nombre + '\'' +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
                 ", correo='" + correo + '\'' +
-                ", password='" + password + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", rol='" + rol + '\'' +
                 '}';
     }
 }
-
-
-
