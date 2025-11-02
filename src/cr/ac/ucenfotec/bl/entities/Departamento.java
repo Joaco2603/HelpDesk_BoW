@@ -1,7 +1,7 @@
 package cr.ac.ucenfotec.bl.entities;
 
 public class Departamento {
-    private String id;
+    private int id;
     private String nombre;
     private String descripcion;
     private String contacto;
@@ -9,18 +9,18 @@ public class Departamento {
     public Departamento() {
     }
 
-    public Departamento(String id, String nombre, String descripcion, String contacto) {
+    public Departamento(int id, String nombre, String descripcion, String contacto) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.contacto = contacto;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

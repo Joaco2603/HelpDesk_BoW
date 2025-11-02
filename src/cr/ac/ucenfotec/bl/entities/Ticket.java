@@ -3,7 +3,7 @@ package cr.ac.ucenfotec.bl.entities;
 import java.time.LocalDateTime;
 
 public class Ticket {
-    private String id;
+    private int id;
     private String asunto;
     private String descripcion;
     private String estado;
@@ -16,7 +16,7 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(String id, String asunto, String descripcion, String estado, String prioridad, 
+    public Ticket(int id, String asunto, String descripcion, String estado, String prioridad,
                   Usuario usuario, Departamento departamento) {
         this.id = id;
         this.asunto = asunto;
@@ -29,11 +29,11 @@ public class Ticket {
         this.departamento = departamento;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

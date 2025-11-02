@@ -33,13 +33,17 @@ public class Controller {
         return usuario;
     }
 
-    public Usuario register(String nombre, String correo, String password, String telefono) {
+    public Usuario register(String cedula, String nombre, String correo, String password, String telefono) {
         // Verificar si el correo ya existe
         if (usuarioHandler.findUsuarioByCorreo(correo) != null) {
             return null; // El usuario ya existe
         }
+
+        if(usuarioHandler.findUsuarioById(cedula) != null) {
+            return null;
+        }
         
-        Usuario usuario = usuarioHandler.addUsuario(nombre, correo, password, telefono, "usuario");
+        Usuario usuario = usuarioHandler.addUsuario(cedula, nombre, correo, password, telefono, "usuario");
         this.usuarioActual = usuario;
         this.isLogged = true;
         return usuario;
@@ -87,15 +91,15 @@ public class Controller {
 
     // ==================== MÉTODOS DE DEPARTAMENTO ====================
     
-    public Departamento crearDepartamento(String nombre, String descripcion, String contacto) {
-        return departamentoHandler.addDepartamento(nombre, descripcion, contacto);
+    public Departamento crearDepartamento(int id, String nombre, String descripcion, String contacto) {
+        return departamentoHandler.addDepartamento(id, nombre, descripcion, contacto);
     }
 
     public ArrayList<Departamento> getAllDepartamentos() {
         return departamentoHandler.getAllDepartamentos();
     }
 
-    public Departamento getDepartamentoById(String id) {
+    public Departamento getDepartamentoById(int id) {
         return departamentoHandler.findDepartamentoById(id);
     }
 
@@ -113,7 +117,7 @@ public class Controller {
 
     // ==================== MÉTODOS DE TICKET ====================
     
-    public Ticket crearTicket(String asunto, String descripcion, String prioridad, String departamentoId) {
+    public Ticket crearTicket(int id, String asunto, String descripcion, String prioridad, int departamentoId) {
         if (!isLogged || usuarioActual == null) {
             return null; // Usuario no autenticado
         }
@@ -123,7 +127,7 @@ public class Controller {
             return null; // Departamento no encontrado
         }
         
-        return ticketHandler.createTicket(asunto, descripcion, prioridad, usuarioActual, departamento);
+        return ticketHandler.createTicket(id, asunto, descripcion, prioridad, usuarioActual, departamento);
     }
 
     public ArrayList<Ticket> getAllTickets() {
@@ -153,7 +157,7 @@ public class Controller {
         return ticketHandler.getTicketsByPrioridad(prioridad);
     }
 
-    public Ticket getTicketById(String id) {
+    public Ticket getTicketById(int id) {
         return ticketHandler.findTicketById(id);
     }
 
@@ -161,11 +165,11 @@ public class Controller {
         return ticketHandler.updateTicket(ticket);
     }
 
-    public boolean cambiarEstadoTicket(String ticketId, String nuevoEstado) {
+    public boolean cambiarEstadoTicket(int ticketId, String nuevoEstado) {
         return ticketHandler.updateEstadoTicket(ticketId, nuevoEstado);
     }
 
-    public boolean deleteTicket(String id) {
+    public boolean deleteTicket(int id) {
         return ticketHandler.deleteTicket(id);
     }
 

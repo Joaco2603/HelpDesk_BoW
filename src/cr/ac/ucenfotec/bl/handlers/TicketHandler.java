@@ -16,16 +16,16 @@ public class TicketHandler {
         dataTickets = new TicketsData();
     }
 
-    public Ticket createTicket(String asunto, String descripcion, String prioridad, Usuario usuario, Departamento departamento) {
+    public Ticket createTicket(int id, String asunto, String descripcion, String prioridad, Usuario usuario, Departamento departamento) {
         String estado = "Abierto";
-        Ticket ticket = new Ticket(UUID.randomUUID().toString(), asunto, descripcion, estado, prioridad, usuario, departamento);
+        Ticket ticket = new Ticket(id, asunto, descripcion, estado, prioridad, usuario, departamento);
         dataTickets.addTicket(ticket);
         return ticket;
     }
 
-    public Ticket findTicketById(String id) {
+    public Ticket findTicketById(int id) {
         for (Ticket ticket : dataTickets.getTickets()) {
-            if (ticket.getId().equals(id)) {
+            if (Integer.valueOf(ticket.getId()).equals(id)) {
                 return ticket;
             }
         }
@@ -45,7 +45,7 @@ public class TicketHandler {
     public ArrayList<Ticket> getTicketsByDepartamento(String departamentoId) {
         ArrayList<Ticket> ticketsDepartamento = new ArrayList<>();
         for (Ticket ticket : dataTickets.getTickets()) {
-            if (ticket.getDepartamento().getId().equals(departamentoId)) {
+            if (Integer.valueOf(ticket.getDepartamento().getId()).equals(departamentoId)) {
                 ticketsDepartamento.add(ticket);
             }
         }
@@ -80,7 +80,7 @@ public class TicketHandler {
         ticket.setFechaActualizacion(LocalDateTime.now());
         ArrayList<Ticket> tickets = dataTickets.getTickets();
         for (int i = 0; i < tickets.size(); i++) {
-            if (tickets.get(i).getId().equals(ticket.getId())) {
+            if (Integer.valueOf(tickets.get(i).getId()).equals(ticket.getId())) {
                 tickets.set(i, ticket);
                 return true;
             }
@@ -88,7 +88,7 @@ public class TicketHandler {
         return false;
     }
 
-    public boolean updateEstadoTicket(String ticketId, String nuevoEstado) {
+    public boolean updateEstadoTicket(int ticketId, String nuevoEstado) {
         Ticket ticket = findTicketById(ticketId);
         if (ticket != null) {
             ticket.setEstado(nuevoEstado);
@@ -97,10 +97,10 @@ public class TicketHandler {
         return false;
     }
 
-    public boolean deleteTicket(String id) {
+    public boolean deleteTicket(int id) {
         ArrayList<Ticket> tickets = dataTickets.getTickets();
         for (int i = 0; i < tickets.size(); i++) {
-            if (tickets.get(i).getId().equals(id)) {
+            if (Integer.valueOf(tickets.get(i).getId()).equals(id)) {
                 tickets.remove(i);
                 return true;
             }

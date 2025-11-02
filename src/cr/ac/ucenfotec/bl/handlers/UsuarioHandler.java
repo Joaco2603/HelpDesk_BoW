@@ -4,7 +4,7 @@ import cr.ac.ucenfotec.bl.entities.Usuario;
 import cr.ac.ucenfotec.dl.UsuariosData;
 
 import java.util.ArrayList;
-import java.util.UUID;
+
 
 public class UsuarioHandler {
     private UsuariosData dataUsuarios;
@@ -13,8 +13,8 @@ public class UsuarioHandler {
         dataUsuarios = new UsuariosData();
     }
 
-    public Usuario addUsuario(String nombre, String correo, String password, String telefono, String rol) {
-        Usuario usuario = new Usuario(UUID.randomUUID().toString(), nombre, correo, password, telefono, rol);
+    public Usuario addUsuario(String cedula, String nombre, String correo, String password, String telefono, String rol) {
+        Usuario usuario = new Usuario(cedula, nombre, correo, password, telefono, rol);
         dataUsuarios.addUsuario(usuario);
         return usuario;
     }

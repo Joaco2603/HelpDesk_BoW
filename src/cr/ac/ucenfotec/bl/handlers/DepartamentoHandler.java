@@ -4,7 +4,6 @@ import cr.ac.ucenfotec.bl.entities.Departamento;
 import cr.ac.ucenfotec.dl.DepartamentosData;
 
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class DepartamentoHandler {
     private DepartamentosData dataDepartamentos;
@@ -13,15 +12,15 @@ public class DepartamentoHandler {
         dataDepartamentos = new DepartamentosData();
     }
 
-    public Departamento addDepartamento(String nombre, String descripcion, String contacto) {
-        Departamento departamento = new Departamento(UUID.randomUUID().toString(), nombre, descripcion, contacto);
+    public Departamento addDepartamento(int id,String nombre, String descripcion, String contacto) {
+        Departamento departamento = new Departamento(id, nombre, descripcion, contacto);
         dataDepartamentos.addDepartamento(departamento);
         return departamento;
     }
 
-    public Departamento findDepartamentoById(String id) {
+    public Departamento findDepartamentoById(int id) {
         for (Departamento departamento : dataDepartamentos.getDepartamentos()) {
-            if (departamento.getId().equals(id)) {
+            if (Integer.valueOf(departamento.getId()).equals(id)) {
                 return departamento;
             }
         }
@@ -44,7 +43,7 @@ public class DepartamentoHandler {
     public boolean updateDepartamento(Departamento departamento) {
         ArrayList<Departamento> departamentos = dataDepartamentos.getDepartamentos();
         for (int i = 0; i < departamentos.size(); i++) {
-            if (departamentos.get(i).getId().equals(departamento.getId())) {
+            if (Integer.valueOf(departamentos.get(i).getId()).equals(departamento.getId())) {
                 departamentos.set(i, departamento);
                 return true;
             }
@@ -55,7 +54,7 @@ public class DepartamentoHandler {
     public boolean deleteDepartamento(String id) {
         ArrayList<Departamento> departamentos = dataDepartamentos.getDepartamentos();
         for (int i = 0; i < departamentos.size(); i++) {
-            if (departamentos.get(i).getId().equals(id)) {
+            if (Integer.valueOf(departamentos.get(i).getId()).equals(id)) {
                 departamentos.remove(i);
                 return true;
             }

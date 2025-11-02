@@ -52,8 +52,9 @@ public class TestController {
         // Test 4: Crear un ticket
         System.out.println("\n=== TEST 4: Crear Ticket ===");
         if (departamentos.size() > 0) {
-            String deptoId = departamentos.get(0).getId();
+            int deptoId = departamentos.get(0).getId();
             Ticket ticket = controller.crearTicket(
+                    1,
                 "Error en el sistema",
                 "No puedo acceder al módulo de reportes",
                 "Alta",
@@ -90,6 +91,7 @@ public class TestController {
         System.out.println("\n=== TEST 7: Registro de Usuario ===");
         controller.logout();
         Usuario nuevoUsuario = controller.register(
+                "12345678",
             "Pedro Gómez",
             "pedro@example.com",
             "pass123",
@@ -113,8 +115,9 @@ public class TestController {
         // Test 9: Crear ticket con el nuevo usuario
         System.out.println("\n=== TEST 9: Crear Ticket con Nuevo Usuario ===");
         if (departamentos.size() > 1) {
-            String deptoId = departamentos.get(1).getId();
+            int deptoId = departamentos.get(1).getId();
             Ticket ticket2 = controller.crearTicket(
+                    1,
                 "Solicitud de permisos",
                 "Necesito acceso al sistema de nóminas",
                 "Media",
@@ -132,7 +135,7 @@ public class TestController {
         System.out.println("\n=== TEST 10: Actualizar Estado de Ticket ===");
         ArrayList<Ticket> todosTickets = controller.getAllTickets();
         if (todosTickets.size() > 0) {
-            String ticketId = todosTickets.get(0).getId();
+            int ticketId = todosTickets.get(0).getId();
             boolean actualizado = controller.cambiarEstadoTicket(ticketId, "En Proceso");
             if (actualizado) {
                 System.out.println("✓ Estado actualizado correctamente");
