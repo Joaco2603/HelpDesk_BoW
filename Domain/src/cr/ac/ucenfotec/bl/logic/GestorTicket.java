@@ -6,7 +6,6 @@ import cr.ac.ucenfotec.bl.entities.Departamento;
 import cr.ac.ucenfotec.dl.TicketsData;
 
 import java.util.ArrayList;
-import java.util.UUID;
 import java.time.LocalDateTime;
 
 public class TicketHandler {
@@ -25,7 +24,7 @@ public class TicketHandler {
 
     public Ticket findTicketById(int id) {
         for (Ticket ticket : dataTickets.getTickets()) {
-            if (Integer.valueOf(ticket.getId()).equals(id)) {
+            if (ticket.getId() == id) {
                 return ticket;
             }
         }
@@ -45,7 +44,7 @@ public class TicketHandler {
     public ArrayList<Ticket> getTicketsByDepartamento(String departamentoId) {
         ArrayList<Ticket> ticketsDepartamento = new ArrayList<>();
         for (Ticket ticket : dataTickets.getTickets()) {
-            if (Integer.valueOf(ticket.getDepartamento().getId()).equals(departamentoId)) {
+            if (String.valueOf(ticket.getDepartamento().getId()).equals(departamentoId)) {
                 ticketsDepartamento.add(ticket);
             }
         }
@@ -80,7 +79,7 @@ public class TicketHandler {
         ticket.setFechaActualizacion(LocalDateTime.now());
         ArrayList<Ticket> tickets = dataTickets.getTickets();
         for (int i = 0; i < tickets.size(); i++) {
-            if (Integer.valueOf(tickets.get(i).getId()).equals(ticket.getId())) {
+            if (tickets.get(i).getId() == ticket.getId()) {
                 tickets.set(i, ticket);
                 return true;
             }
@@ -100,7 +99,7 @@ public class TicketHandler {
     public boolean deleteTicket(int id) {
         ArrayList<Ticket> tickets = dataTickets.getTickets();
         for (int i = 0; i < tickets.size(); i++) {
-            if (Integer.valueOf(tickets.get(i).getId()).equals(id)) {
+            if (tickets.get(i).getId() == id) {
                 tickets.remove(i);
                 return true;
             }

@@ -5,7 +5,6 @@ import cr.ac.ucenfotec.dl.UsuariosData;
 
 import java.util.ArrayList;
 
-
 public class UsuarioHandler {
     private UsuariosData dataUsuarios;
 
