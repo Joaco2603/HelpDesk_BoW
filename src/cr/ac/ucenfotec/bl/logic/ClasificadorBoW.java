@@ -1,20 +1,20 @@
 package cr.ac.ucenfotec.bl.logic;
 
 import cr.ac.ucenfotec.bl.entities.Tockenizer;
-import cr.ac.ucenfotec.dl.DiccionarioEmocional;
-import cr.ac.ucenfotec.dl.DiccionarioTecnico;
+import cr.ac.ucenfotec.dl.DataDiccionarioEmocional;
+import cr.ac.ucenfotec.dl.DataDiccionarioTecnico;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ClasificadorBoW {
-    private DiccionarioEmocional diccionarioEmocional;
-    private DiccionarioTecnico diccionarioTecnico;
+    private DataDiccionarioEmocional diccionarioEmocional;
+    private DataDiccionarioTecnico diccionarioTecnico;
 
     public ClasificadorBoW() {
-        this.diccionarioEmocional = new DiccionarioEmocional();
-        this.diccionarioTecnico = new DiccionarioTecnico();
+        this.diccionarioEmocional = new DataDiccionarioEmocional();
+        this.diccionarioTecnico = new DataDiccionarioTecnico();
     }
 
     /**

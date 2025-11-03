@@ -1,15 +1,15 @@
-package cr.ac.ucenfotec.bl.handlers;
+package cr.ac.ucenfotec.bl.logic;
 
 import cr.ac.ucenfotec.bl.entities.Usuario;
-import cr.ac.ucenfotec.dl.UsuariosData;
+import cr.ac.ucenfotec.dl.DataUsuarios;
 
 import java.util.ArrayList;
 
-public class UsuarioHandler {
-    private UsuariosData dataUsuarios;
+public class GestorUsuario {
+    private DataUsuarios dataUsuarios;
 
-    public UsuarioHandler() {
-        dataUsuarios = new UsuariosData();
+    public GestorUsuario() {
+        dataUsuarios = new DataUsuarios();
     }
 
     public Usuario addUsuario(String cedula, String nombre, String correo, String password, String telefono, String rol) {

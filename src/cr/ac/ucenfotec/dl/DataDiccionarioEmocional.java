@@ -3,13 +3,13 @@ package cr.ac.ucenfotec.dl;
 import cr.ac.ucenfotec.bl.entities.Tockenizer;
 import java.util.ArrayList;
 
-public class DiccionarioEmocional {
+public class DataDiccionarioEmocional {
     private ArrayList<Tockenizer> frustracion;
     private ArrayList<Tockenizer> urgencia;
     private ArrayList<Tockenizer> neutralidad;
     private ArrayList<Tockenizer> positivo;
 
-    public DiccionarioEmocional() {
+    public DataDiccionarioEmocional() {
         frustracion = new ArrayList<>();
         urgencia = new ArrayList<>();
         neutralidad = new ArrayList<>();

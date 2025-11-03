@@ -4,10 +4,10 @@ import cr.ac.ucenfotec.bl.entities.Ticket;
 
 import java.util.ArrayList;
 
-public class TicketsData {
+public class DataTickets {
     private ArrayList<Ticket> tickets;
 
-    public TicketsData() {
+    public DataTickets() {
         tickets = new ArrayList<>();
     }
 

@@ -4,10 +4,10 @@ import cr.ac.ucenfotec.bl.entities.Departamento;
 
 import java.util.ArrayList;
 
-public class DepartamentosData {
+public class DataDepartamentos {
     private ArrayList<Departamento> departamentos;
 
-    public DepartamentosData() {
+    public DataDepartamentos() {
         departamentos = new ArrayList<>();
         
         // Datos de prueba

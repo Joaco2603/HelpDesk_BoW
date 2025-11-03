@@ -1,15 +1,15 @@
-package cr.ac.ucenfotec.bl.handlers;
+package cr.ac.ucenfotec.bl.logic;
 
 import cr.ac.ucenfotec.bl.entities.Departamento;
-import cr.ac.ucenfotec.dl.DepartamentosData;
+import cr.ac.ucenfotec.dl.DataDepartamentos;
 
 import java.util.ArrayList;
 
-public class DepartamentoHandler {
-    private DepartamentosData dataDepartamentos;
+public class GestorDepartamento {
+    private DataDepartamentos dataDepartamentos;
 
-    public DepartamentoHandler() {
-        dataDepartamentos = new DepartamentosData();
+    public GestorDepartamento() {
+        dataDepartamentos = new DataDepartamentos();
     }
 
     public Departamento addDepartamento(int id, String nombre, String descripcion, String contacto) {

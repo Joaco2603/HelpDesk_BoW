@@ -1,18 +1,18 @@
-package cr.ac.ucenfotec.bl.handlers;
+package cr.ac.ucenfotec.bl.logic;
 
 import cr.ac.ucenfotec.bl.entities.Ticket;
 import cr.ac.ucenfotec.bl.entities.Usuario;
 import cr.ac.ucenfotec.bl.entities.Departamento;
-import cr.ac.ucenfotec.dl.TicketsData;
+import cr.ac.ucenfotec.dl.DataTickets;
 
 import java.util.ArrayList;
 import java.time.LocalDateTime;
 
-public class TicketHandler {
-    private TicketsData dataTickets;
+public class GestorTicket {
+    private DataTickets dataTickets;
 
-    public TicketHandler() {
-        dataTickets = new TicketsData();
+    public GestorTicket() {
+        dataTickets = new DataTickets();
     }
 
     public Ticket createTicket(int id, String asunto, String descripcion, String prioridad, Usuario usuario, Departamento departamento) {

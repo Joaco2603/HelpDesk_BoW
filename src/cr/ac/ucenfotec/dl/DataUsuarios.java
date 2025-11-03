@@ -5,10 +5,10 @@ import cr.ac.ucenfotec.bl.entities.Usuario;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class UsuariosData {
+public class DataUsuarios {
     private ArrayList<Usuario> usuarios;
 
-    public UsuariosData() {
+    public DataUsuarios() {
         usuarios = new ArrayList<>();
         
         // Datos de prueba

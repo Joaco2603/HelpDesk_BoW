@@ -8,14 +8,14 @@ import java.util.ArrayList;
  * clasificadas por categorías técnicas
  * Relación: Composición (0..* contiene Palabra)
  */
-public class DiccionarioTecnico {
+public class DataDiccionarioTecnico {
     // Listas que contienen objetos Palabra (Tockenizer)
     private ArrayList<Tockenizer> redes;
     private ArrayList<Tockenizer> impresoras;
     private ArrayList<Tockenizer> cuentas;
     private ArrayList<Tockenizer> hardware;
 
-    public DiccionarioTecnico() {
+    public DataDiccionarioTecnico() {
         // Inicializar las listas
         redes = new ArrayList<>();
         impresoras = new ArrayList<>();
