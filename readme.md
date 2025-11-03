@@ -23,18 +23,6 @@ El sistema incluye un clasificador BoW que analiza el contenido de los tickets:
 - **Emocional**: Identifica el tono del mensaje (Frustración, Urgencia, Neutralidad, Positivo)
 - **Técnico**: Categoriza el problema (Redes, Impresoras, Cuentas, Hardware)
 
-### Funcionalidades del Clasificador:
-```java
-ClasificadorBoW clasificador = new ClasificadorBoW();
-
-// Analizar ticket completo
-AnalisisTicket analisis = clasificador.analizarTicket(asunto, descripcion);
-System.out.println("Categoría Emocional: " + analisis.categoriaEmocional);
-System.out.println("Categoría Técnica: " + analisis.categoriaTecnica);
-System.out.println("Prioridad Sugerida: " + analisis.prioridadSugerida);
-System.out.println("Departamento Sugerido: " + analisis.departamentoSugerido);
-```
-
 ## Requisitos
 
 - **JDK 8 o superior** instalado y configurado en la variable `PATH`
